@@ -1,17 +1,45 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Calculapp</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content padding> 
+  <div id="old-results">
+      <button ion-button round>1500</button>
+  </div>
+  <div id="display"class="display">
+    <h1>1500</h1>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <button ion-button col-3 round>C</button>
+      <button ion-button col-3 round>+/-</button>
+      <button ion-button col-3 round>%</button>
+      <button ion-button col-2 round>/</button>
+    </ion-row>
+    <ion-row>
+      <button ion-button col-3 color="light" round>7</button>
+      <button ion-button col-3 color="light" round>8</button>
+      <button ion-button col-3 color="light" round>9</button>
+      <button ion-button col-2 round>x</button>
+    </ion-row> 
+    <ion-row>
+        <button ion-button col-3 color="light" round>4</button>
+        <button ion-button col-3 color="light" round>5</button>
+        <button ion-button col-3 color="light" round>6</button>
+        <button ion-button col-2 round>-</button>
+    </ion-row>
+    <ion-row>
+        <button ion-button col-3 color="light" round>1</button>
+        <button ion-button col-3 color="light" round>2</button>
+        <button ion-button col-3 color="light" round>3</button>
+        <button ion-button col-2 round>+</button>
+    </ion-row>
+    <ion-row>
+        <button ion-button col-6 color="light" round>0</button>
+        <button ion-button col-3 color="light" round>.</button>
+        <button ion-button col-2 round>=</button>
+    </ion-row>
+  </ion-grid>
 </ion-content>
