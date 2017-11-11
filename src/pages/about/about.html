@@ -1,11 +1,49 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Conversion
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <ion-grid>
+    <ion-row>
+      <ion-item col-9>
+        <ion-label floating>Decimal</ion-label>
+        <ion-input (ionChange)="fromDecimal()" [(ngModel)]="decimal"></ion-input>
+      </ion-item>
+      <button ion-button outline color="secondary" round col-2 (click)="copy(decimal)"><ion-icon name="copy"></ion-icon></button>
+    </ion-row>
+    <ion-row>
+      <ion-item col-9>
+        <ion-label floating>Binary</ion-label>
+        <ion-input (ionChange)="fromBinary()" [(ngModel)]="binary"></ion-input>
+      </ion-item> 
+      <button ion-button outline color="secondary" round col-2 (click)="copy(binary)"><ion-icon name="copy"></ion-icon></button>
+    </ion-row>
+    <ion-row>
+        <ion-item col-9>
+          <ion-label floating>Hexadecimal</ion-label>
+          <ion-input (ionChange)="fromHexadecimal()" [(ngModel)]="hexadecimal"></ion-input>
+        </ion-item>  
+        <button ion-button outline color="secondary" round col-2 (click)="copy(hexadecimal)"><ion-icon name="copy"></ion-icon></button>    
+    </ion-row>
+    <ion-row>
+      <ion-item col-9>
+        <ion-label floating>Octadecimal</ion-label>
+        <ion-input (ionChange)="fromOctadecimal()" [(ngModel)]="octadecimal"></ion-input>
+      </ion-item>      
+      <button ion-button outline color="secondary" round col-2 (click)="copy(octadecimal)"><ion-icon name="copy"></ion-icon></button>
+    </ion-row>
+    <ion-row>
+      <div style="text-align:center" col-12>
+        <button ion-button round outline item-end icon-left (click)="clear()">
+            <ion-icon name="trash"></ion-icon>
+            Delete All
+        </button>
+      </div>
+    </ion-row>
+  </ion-grid>
+  
 </ion-content>

@@ -6,40 +6,45 @@
 
 <ion-content padding> 
   <div id="old-results">
-      <button ion-button round>1500</button>
+      <button ion-button *ngFor="let n of history  | slice:0:3" outline round (click)="setOld(n)">{{n}}</button>
   </div>
   <div id="display"class="display">
-    <h1>1500</h1>
+    <div id="secondLine">
+      <p id="secondaryNumber">{{secondaryNumber}}</p>
+      <p id="operation">{{currentOperation}}</p>
+    </div>
+    <p id="primaryNumber">{{primaryNumber}}</p>
   </div>
+
   <ion-grid>
     <ion-row>
-      <button ion-button col-3 round>C</button>
-      <button ion-button col-3 round>+/-</button>
-      <button ion-button col-3 round>%</button>
-      <button ion-button col-2 round>/</button>
+      <button *ngIf="ac" ion-button col-3 round (click)="allClear()">AC</button>
+      <button *ngIf="!ac" ion-button col-3 round (click)="clear()">C</button>
+      <button ion-button col-3 round (click)="changeSign()">+/-</button>
+      <button ion-button col-3 round (click)="percentage()">%</button>
+      <button ion-button col-2 round (click)="setOperation('/')">/</button>
     </ion-row>
     <ion-row>
-      <button ion-button col-3 color="light" round>7</button>
-      <button ion-button col-3 color="light" round>8</button>
-      <button ion-button col-3 color="light" round>9</button>
-      <button ion-button col-2 round>x</button>
+      <button ion-button col-3 color="light" round *ngFor="let n of row1" (click)="register(n)">{{n}}</button>
+      <button ion-button col-2 round (click)="setOperation('x')">x</button>
     </ion-row> 
     <ion-row>
-        <button ion-button col-3 color="light" round>4</button>
-        <button ion-button col-3 color="light" round>5</button>
-        <button ion-button col-3 color="light" round>6</button>
-        <button ion-button col-2 round>-</button>
+      <button ion-button col-3 color="light" round *ngFor="let n of row2" (click)="register(n)">{{n}}</button>
+      <button ion-button col-2 round (click)="setOperation('-')">-</button>
     </ion-row>
     <ion-row>
-        <button ion-button col-3 color="light" round>1</button>
-        <button ion-button col-3 color="light" round>2</button>
-        <button ion-button col-3 color="light" round>3</button>
-        <button ion-button col-2 round>+</button>
+      <button ion-button col-3 color="light" round *ngFor="let n of row3" (click)="register(n)">{{n}}</button>
+      <button ion-button col-2 round (click)="setOperation('+')">+</button>
     </ion-row>
     <ion-row>
-        <button ion-button col-6 color="light" round>0</button>
-        <button ion-button col-3 color="light" round>.</button>
-        <button ion-button col-2 round>=</button>
+        <button ion-button col-6 color="light" (click)="register('0')" round>0</button>
+        <button ion-button col-3 color="light" (click)="addDecimal()" round>.</button>
+        <button ion-button col-2 round (click)="solve(true)">=</button>
     </ion-row>
   </ion-grid>
+  <!--<ion-grid>
+    <ion-row *ngFor="let row of panel">
+      <button ion-button round *ngFor="let object of row" [color]="object.color" (click)="object.click">{{object.text}}</button>
+    </ion-row>
+  </ion-grid>-->
 </ion-content>
