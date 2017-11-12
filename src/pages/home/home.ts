@@ -163,7 +163,6 @@ export class HomePage {
       this.previousAnswer = 0;
       this.clear();
     }
-    console.log(n);
     if(this.primaryNumber==="0"){
       this.primaryNumber = n;
     }else{
@@ -206,7 +205,6 @@ export class HomePage {
   percentage(){
     this.primaryNumber!=="0" ? this.primaryNumber = (Number(this.primaryNumber)/100).toString():null;
     this.previousAnswer = Number(this.primaryNumber);
-    console.log(this.previousAnswer);
   }
   solve(flag:boolean){
     if(this.secondaryNumber!==null){
@@ -215,34 +213,23 @@ export class HomePage {
       let result;
       switch (this.currentOperation){
         case "+":{
-          this.previousAnswer === 0 ? result = number1 + number2 : result = this.previousAnswer + number1;
+          result = number1 + number2
           break;
         }
         case "-":{
-          this.previousAnswer === 0 ? result = number2 - number1 : result = this.previousAnswer - number1;
-          //result = number1 - number2;
+          result = number2 - number1;
           break;
         }
         case "x":{
-          this.previousAnswer === 0 ? result = number1 * number2 : result = this.previousAnswer * number1;
-          //result = number1 * number2;
+          result = number1 * number2;
           break;
         }
         case "/":{
-          if(this.previousAnswer === 0){
-            if(number1===0){
-              this.onError();
-            }else{
-              result = number2 / number1
-            }
+          if(number1===0){
+            this.onError();
           }else{
-            if(number1===0){
-              this.onError();
-            }else{
-              result =this.previousAnswer / number1
-            }
+            result = number2 / number1;
           }
-          //result = number1 / number2;
           break;
         }
       }

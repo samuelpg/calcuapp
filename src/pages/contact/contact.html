@@ -1,17 +1,15 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Contact
+      Formulas
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
+    <button ion-item *ngFor="let p of pages" (click)="openPage(p.page)">
+      {{p.title}}
+    </button>
   </ion-list>
 </ion-content>

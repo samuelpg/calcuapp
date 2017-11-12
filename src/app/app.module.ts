@@ -7,6 +7,9 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { PythagorasPage } from '../pages/pythagoras/pythagoras';
+import {CircumferencePage} from '../pages/circumference/circumference';
+import {TemperaturePage} from '../pages/temperature/temperature';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -18,7 +21,10 @@ import { Clipboard } from '@ionic-native/clipboard';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    PythagorasPage,
+    TemperaturePage,
+    CircumferencePage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,10 @@ import { Clipboard } from '@ionic-native/clipboard';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    PythagorasPage,
+    TemperaturePage,
+    CircumferencePage
   ],
   providers: [
     StatusBar,
